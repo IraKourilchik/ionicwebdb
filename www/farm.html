@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+    <!-- your app's js -->
+    <script src="js/uuid.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ionic/js/ng-cordova.js"></script> 
+    <script src="cordova.js"></script>
+   
+  </head>
+  <body ng-app="todoapp" ng-controller="todoctrl">
+     
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <div class = "tabs tabs-icon-top">
+            <a class = "tab-item" href="index.html">
+               <i class = "icon ion-home"></i>
+               Animals
+            </a>
+            <a class = "tab-item" href="farm.html">
+               <i class = "icon ion-star"></i>
+               Farm movie
+            </a>
+         </div>
+      </ion-header-bar>
+      <ion-content>
+        
+        <figure>
+            <figcaption>Small farm video</figcaption>
+            <div class="h_iframe">
+                    <iframe src="https://www.youtube.com/embed/sJLjGWdXRe0" frameborder="0" allowfullscreen></iframe>
+                </div>
+        </figure>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>

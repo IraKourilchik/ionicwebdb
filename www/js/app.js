@@ -3,10 +3,11 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('todoapp', ['ionic'])
+angular.module('todoapp', ['ionic', 'ngCordova'])
 
-.controller('todoctrl', function($scope, $http) {
-  $scope.model={};
+.controller('todoctrl', function($scope, $http, $cordovaMedia) {
+  /*
+  $scope.model={}; 
   $scope.todos = [];
   var dbSize = 5 * 1024 * 1024; // 5MB
   /// open database
@@ -21,8 +22,10 @@ angular.module('todoapp', ['ionic'])
           },
           function () { console.log("failure") }
       );
+      
   });
-
+    */
+  /*
   $scope.addTodo= function(){
       //alert("In addTodo() with" + $scope.todoItem);
       
@@ -94,6 +97,144 @@ angular.module('todoapp', ['ionic'])
           return("open");
       }
   }
+*/
+  document.addEventListener('deviceready', onDeviceReady, false);
+  
+  function onDeviceReady() {
+      // document.querySelector("#beeClick").addEventListener("touchend", beeClick, false);
+      console.log(Media);
+  };
+  
+  $scope.beeClick = function() {
+      // alert("beeClick");
+      try{
+        var media = new Media("animals/bee.mp3",
+        // success callback
+        function() {
+            console.log("Bee: Success");
+        },
+        // error callback
+        function(err) {
+            console.log("Bee: Error: "+err);
+        },
+        null);
+
+        media.play();
+      }
+      catch(err){
+          alert("beeClick failure: " + err);
+      }
+  }
+
+  $scope.barkClick = function() {
+      // alert("barkClick");
+      try{
+        var media = new Media("animals/bark.mp3",
+        // success callback
+        function() {
+            console.log("Bark: Success");
+        },
+        // error callback
+        function(err) {
+            console.log("Bark: Error: "+err);
+        },
+        null);
+        
+        media.play();
+    }
+    catch(err){
+        alert("barkClick failure: " + err);
+    }
+  }
+
+  $scope.chickClick = function() {
+    // alert("chickClick");
+    try{
+    var media = new Media("animals/chick.mp3",
+      // success callback
+      function() {
+          console.log("chick: Success");
+      },
+      // error callback
+      function(err) {
+          console.log("chick: Error: "+err);
+       },
+      null);
+      
+      media.play();
+    }
+    catch(err){
+        alert("chickClick failure: " + err);
+    }
+}
+
+$scope.cowClick = function() {
+    // alert("cowClick");
+    try{
+    var media = new Media("animals/cow.mp3",
+      // success callback
+      function() {
+          console.log("cow: Success");
+      },
+      // error callback
+      function(err) {
+          console.log("cow: Error: "+err);
+      },
+      null);
+      
+      media.play();
+    }
+    catch(err){
+        alert("cowClick failure: " + err);
+    }
+}
+
+$scope.pigClick = function() {
+    // alert("pigClick");
+    try{
+    var media = new Media("animals/pig.mp3",
+      // success callback
+      function() {
+          console.log("pig: Success");
+      },
+      // error callback
+      function(err) {
+          console.log("pig: Error: "+err);
+      },
+      null);
+      
+      media.play();
+    }
+    catch(err){
+        alert("pigClick failure: " + err);
+    }
+}
+
+$scope.sheepClick = function() {
+    // alert("sheepClick");
+    try{
+    var media = new Media("animals/sheep.mp3",
+      // success callback
+      function() {
+          console.log("sheep: Success");
+      },
+      // error callback
+      function(err) {
+          console.log("sheep: Error: "+err);
+      },
+      null);
+      
+      media.play();
+    }
+    catch(err){
+        alert("sheepClick failure: " + err);
+    }
+}
+
+$scope.animalsClick = function(){
+alert("test");
+
+}
 
 })
 

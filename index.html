@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+    <!-- your app's js -->
+    <script src="js/uuid.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ionic/js/ng-cordova.js"></script> 
+    <script src="cordova.js"></script>
+   
+  </head>
+  <body ng-app="todoapp" ng-controller="todoctrl">
+     
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <div class = "tabs tabs-icon-top">
+            <a class = "tab-item" href="index.html">
+               <i class = "icon ion-home"></i>
+               Animals
+            </a>
+            <a class = "tab-item" href="farm.html">
+               <i class = "icon ion-star"></i>
+               Farm movie
+            </a>
+         </div>
+      </ion-header-bar>
+      <ion-content>
+        
+        <!--
+        <ion-list>
+          <ion-item ng-repeat="todo in todos">
+            <button type="button" ng-click="deleteTodo(todo.ID)">-</button>
+            <button type="button" ng-click="finishTodo(todo.ID)">&#10004;</button>
+            <span ng-class="getClass(todo.finished_on)">&nbsp;{{todo.name}}</span>
+          </ion-item>
+        </ion-list>
+        <form ng-submit="addTodo()">
+          <input ng-model="model.todoItem" placeholder="task to do"/>
+          <button type="submit">+</button>
+        </form>
+        -->
+        <!--p>Educational application for the smallest. Click on picture!</p>
+        <table>
+          <tr>
+            <td><img src="animals/bee.jpg" ng-click="beeClick()"></td>
+            <td><img src="animals/dog.jpg" ng-click="barkClick()"></td>
+          </tr>
+          <tr>
+            <td><img src="animals/chick.jpg" ng-click="chickClick()"></td>
+            <td><img src="animals/cow.jpg" ng-click="cowClick()"></td>
+          </tr>
+          <tr>
+            <td><img src="animals/pig.jpg" ng-click="pigClick()"></td>
+            <td><img src="animals/sheep.jpg" ng-click="sheepClick()"></td>
+          </tr>
+        </table-->
+
+        <figure>
+          <figcaption>Educational application for the smallest. Click on picture!</figcaption>
+          <table>
+              <tr>
+                <td><img src="animals/bee.jpg" ng-click="beeClick()"></td>
+                <td><img src="animals/dog.jpg" ng-click="barkClick()"></td>
+              </tr>
+              <tr>
+                <td><img src="animals/chick.jpg" ng-click="chickClick()"></td>
+                <td><img src="animals/cow.jpg" ng-click="cowClick()"></td>
+              </tr>
+              <tr>
+                <td><img src="animals/pig.jpg" ng-click="pigClick()"></td>
+                <td><img src="animals/sheep.jpg" ng-click="sheepClick()"></td>
+              </tr>
+            </table>
+        </figure>
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
